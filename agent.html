@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>에이전트 채팅</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Malgun Gothic", sans-serif; background: #f0f2f5; height: 100vh; display: flex; justify-content: center; }
+  .chat { width: 100%; max-width: 720px; height: 100%; display: flex; flex-direction: column; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,.08); }
+  header { padding: 14px 18px; background: #4f46e5; color: #fff; display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 17px; margin: 0; }
+  header a { color: #fff; font-size: 13px; text-decoration: none; opacity: .85; }
+  #messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { max-width: 78%; padding: 10px 14px; border-radius: 16px; line-height: 1.5; white-space: pre-wrap; word-break: break-word; }
+  .msg.user { align-self: flex-end; background: #4f46e5; color: #fff; border-bottom-right-radius: 4px; }
+  .msg.bot { align-self: flex-start; background: #eef0f4; color: #222; border-bottom-left-radius: 4px; }
+  form { display: flex; gap: 8px; padding: 12px; border-top: 1px solid #e5e7eb; }
+  input { flex: 1; padding: 12px 14px; border: 1px solid #d1d5db; border-radius: 22px; font-size: 15px; outline: none; }
+  input:focus { border-color: #4f46e5; }
+  button { padding: 0 20px; border: 0; border-radius: 22px; background: #4f46e5; color: #fff; font-size: 15px; cursor: pointer; }
+  button:hover { background: #4338ca; }
+</style>
+</head>
+<body>
+<div class="chat">
+  <header>
+    <h1>🤖 에이전트 채팅</h1>
+    <a href="index.html">← 홈</a>
+  </header>
+  <div id="messages"></div>
+  <form id="form">
+    <input id="input" type="text" placeholder="메시지를 입력하세요..." autocomplete="off" autofocus>
+    <button type="submit">전송</button>
+  </form>
+</div>
+<script>
+  const messages = document.getElementById('messages');
+  const form = document.getElementById('form');
+  const input = document.getElementById('input');
+
+  function add(text, who) {
+    const el = document.createElement('div');
+    el.className = 'msg ' + who;
+    el.textContent = text;
+    messages.appendChild(el);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  // 데모용 응답 (실제 AI 연동 시 이 함수를 API 호출로 교체)
+  function reply(text) {
+    return '"' + text + '" 라고 하셨군요. 무엇을 도와드릴까요?';
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    add(text, 'user');
+    input.value = '';
+    setTimeout(() => add(reply(text), 'bot'), 400);
+  });
+
+  add('안녕하세요! 저는 에이전트입니다. 무엇을 도와드릴까요?', 'bot');
+</script>
+</body>
+</html>
