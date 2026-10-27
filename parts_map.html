@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>부품 지도 - 제주대학교 홍보</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Malgun Gothic", sans-serif; background: #f0f2f5; color: #222; line-height: 1.6; }
+  header { background: #0b5ed7; color: #fff; padding: 28px 20px; text-align: center; }
+  header h1 { margin: 0 0 6px; font-size: 28px; }
+  header p { margin: 0; opacity: .9; }
+  nav { background: #fff; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; padding: 10px; position: sticky; top: 0; box-shadow: 0 2px 6px rgba(0,0,0,.08); z-index: 5; }
+  nav a { padding: 8px 16px; border-radius: 20px; color: #0b5ed7; text-decoration: none; font-size: 14px; }
+  nav a:hover, nav a.active { background: #0b5ed7; color: #fff; }
+  .search { display: flex; justify-content: center; gap: 8px; padding: 18px 16px 0; }
+  .search input { width: min(420px, 70%); padding: 10px 14px; border: 1px solid #ccd; border-radius: 22px; font-size: 14px; }
+  .btn { padding: 10px 22px; border: 0; border-radius: 22px; background: #0b5ed7; color: #fff; font-size: 14px; cursor: pointer; text-decoration: none; display: inline-block; }
+  .btn:hover { background: #0a4fb5; }
+  .layout { max-width: 1100px; margin: 0 auto; padding: 24px 16px; display: grid; grid-template-columns: 1fr 280px; gap: 22px; }
+  .main-col { display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+  section, article { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+  .card { background: #fff; border-radius: 14px; padding: 18px 20px; box-shadow: 0 2px 8px rgba(0,0,0,.07); }
+  .card h2 { margin: 0 0 8px; font-size: 18px; color: #0b5ed7; }
+  .card ul { margin: 0; padding-left: 20px; font-size: 14px; }
+  .card li { margin-bottom: 3px; }
+  aside { align-self: start; position: sticky; top: 70px; }
+  aside .card ul { list-style: none; padding: 0; }
+  aside .card li { padding: 6px 0; border-bottom: 1px solid #eee; }
+  aside .btn { margin-top: 12px; width: 100%; text-align: center; }
+  footer { background: #1f2937; color: #cbd5e1; text-align: center; padding: 24px 16px; font-size: 14px; }
+  footer a { color: #93c5fd; }
+  @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } aside { position: static; } }
+</style>
+<style>
+  .pm-tag { position: absolute; top: -11px; left: 8px; background: #e11d48; color: #fff; font: bold 11px "Malgun Gothic", sans-serif; padding: 2px 8px; border-radius: 10px; z-index: 20; white-space: nowrap; pointer-events: none; }
+  .pm-box { position: relative !important; outline: 2px dashed #e11d48; outline-offset: 3px; }
+  .pm-note { background: #fff1f2; color: #9f1239; padding: 8px 16px; font-size: 13px; text-align: center; }
+  header.pm-box, nav.pm-box, footer.pm-box { margin: 14px 8px; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>🌴 제주대학교</h1>
+    <p>푸른 바다와 한라산 곁에서 미래를 키우는 대학</p>
+  </header>
+
+  <nav>
+    <a class="active" href="#intro">소개</a>
+    <a href="#edu">교육·연구</a>
+    <a href="#life">캠퍼스 생활</a>
+    <a href="#future">미래</a>
+    <a href="agent.html">💬 채팅 상담</a>
+  </nav>
+
+  <div class="search">
+    <input type="text" placeholder="궁금한 내용을 검색해 보세요">
+    <button class="btn">검색</button>
+  </div>
+
+  <div class="layout">
+    <div class="main-col">
+      <section id="intro">
+        <div class="card">
+          <h2>🌊 바다와 함께하는 캠퍼스</h2>
+          <ul>
+            <li>푸른 제주 바다를 곁에 둔 아름다운 캠퍼스입니다.</li>
+            <li>한라산과 바다가 어우러진 자연 속에서 배웁니다.</li>
+            <li>사계절 꽃과 초록이 가득한 배움터입니다.</li>
+            <li>맑은 공기 속에서 집중력 높은 학업이 가능합니다.</li>
+            <li>캠퍼스 산책길은 학생들의 힐링 공간입니다.</li>
+            <li>노을 지는 제주의 하늘을 매일 만나 보세요.</li>
+            <li>자연과 사람이 공존하는 교육 환경을 지향합니다.</li>
+            <li>섬 전체가 살아 있는 교실이 됩니다.</li>
+            <li>바람과 파도가 영감이 되는 곳입니다.</li>
+            <li>제주에서만 가능한 특별한 대학 생활을 시작하세요.</li>
+          </ul>
+        </div>
+        <div class="card" id="edu">
+          <h2>📚 최고의 교육</h2>
+          <ul>
+            <li>학생 한 사람 한 사람의 성장을 최우선으로 생각합니다.</li>
+            <li>탄탄한 기초 교육과 실무 중심 교육을 함께 제공합니다.</li>
+            <li>다양한 전공 중에서 나에게 맞는 길을 찾을 수 있습니다.</li>
+            <li>소규모 토론 수업으로 생각하는 힘을 키웁니다.</li>
+            <li>융합 교육으로 변화하는 사회에 대비합니다.</li>
+            <li>교수진과 가까이 소통하는 열린 학풍이 있습니다.</li>
+            <li>프로젝트 기반 수업으로 문제 해결력을 기릅니다.</li>
+            <li>글로벌 역량을 위한 외국어 교육을 지원합니다.</li>
+            <li>현장 실습으로 이론을 경험으로 연결합니다.</li>
+            <li>배움에 끝이 없는 평생 학습의 출발점입니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>🔬 연구와 혁신</h2>
+          <ul>
+            <li>지역 문제를 해결하는 연구를 중시합니다.</li>
+            <li>해양, 관광, 환경, 에너지 분야 연구에 도전합니다.</li>
+            <li>학부생도 연구에 참여할 수 있는 기회를 엽니다.</li>
+            <li>산학 협력으로 연구 성과를 현장에 연결합니다.</li>
+            <li>창의적인 아이디어가 실현되는 연구 환경입니다.</li>
+            <li>최신 실험 장비와 연구 공간을 갖추기 위해 노력합니다.</li>
+            <li>청정 제주의 자원을 지속가능하게 연구합니다.</li>
+            <li>새로운 기술로 더 나은 내일을 만듭니다.</li>
+            <li>호기심이 발견이 되는 곳입니다.</li>
+            <li>연구의 즐거움을 함께 나눕니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>🤝 지역과 함께</h2>
+          <ul>
+            <li>제주 지역사회와 함께 성장하는 대학입니다.</li>
+            <li>지역 산업과 연계한 인재를 양성합니다.</li>
+            <li>지역 주민을 위한 열린 프로그램을 운영합니다.</li>
+            <li>봉사 활동으로 나눔의 가치를 배웁니다.</li>
+            <li>제주의 문화와 전통을 소중히 이어 갑니다.</li>
+            <li>지역 기업과의 협력으로 취업 기회를 넓힙니다.</li>
+            <li>관광 도시 제주의 미래를 함께 그립니다.</li>
+            <li>상생과 협력이 우리의 약속입니다.</li>
+            <li>지역 인재가 지역에서 꿈을 펼치도록 돕습니다.</li>
+            <li>제주의 자랑이 되는 대학을 만들어 갑니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>🌏 글로벌 네트워크</h2>
+          <ul>
+            <li>세계 여러 대학과 교류하는 기회를 제공합니다.</li>
+            <li>교환학생 프로그램으로 시야를 넓혀 보세요.</li>
+            <li>외국인 유학생과 함께하는 다문화 캠퍼스입니다.</li>
+            <li>어학 연수와 해외 체험 프로그램을 지원합니다.</li>
+            <li>국제 학술 행사에 참여할 기회가 열려 있습니다.</li>
+            <li>언어와 문화의 벽을 넘는 소통을 배웁니다.</li>
+            <li>세계 속의 제주를 이끌 인재를 키웁니다.</li>
+            <li>다양한 배경의 친구들과 함께 성장합니다.</li>
+            <li>글로벌 시민으로서의 책임감을 기릅니다.</li>
+            <li>제주에서 세계로, 세계에서 제주로 연결됩니다.</li>
+          </ul>
+        </div>
+      </section>
+
+      <article id="life">
+        <div class="card">
+          <h2>🎓 취업과 진로</h2>
+          <ul>
+            <li>진로 상담으로 나만의 길을 설계할 수 있습니다.</li>
+            <li>취업 특강과 모의 면접을 정기적으로 운영합니다.</li>
+            <li>선배와 후배가 이어 주는 멘토링 문화가 있습니다.</li>
+            <li>현장 인턴십으로 실무 경험을 쌓을 수 있습니다.</li>
+            <li>자격증 취득과 역량 개발을 응원합니다.</li>
+            <li>창업을 꿈꾸는 학생을 위한 지원도 마련합니다.</li>
+            <li>졸업 후에도 이어지는 동문 네트워크가 있습니다.</li>
+            <li>다양한 분야로 진출하는 졸업생을 배출합니다.</li>
+            <li>꿈을 현실로 만드는 준비를 함께합니다.</li>
+            <li>당신의 미래를 가장 먼저 응원합니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>🏠 즐거운 학교 생활</h2>
+          <ul>
+            <li>다양한 동아리 활동으로 취미와 특기를 키웁니다.</li>
+            <li>축제와 문화 행사가 캠퍼스를 가득 채웁니다.</li>
+            <li>체육 활동으로 건강한 대학 생활을 돕습니다.</li>
+            <li>쾌적한 기숙사에서 편안하게 지낼 수 있습니다.</li>
+            <li>도서관은 언제나 열려 있는 배움의 공간입니다.</li>
+            <li>학생식당과 카페에서 맛있는 시간을 보냅니다.</li>
+            <li>친구들과 함께 만드는 잊지 못할 추억이 있습니다.</li>
+            <li>학생 자치 활동으로 목소리를 낼 수 있습니다.</li>
+            <li>제주의 맛집과 명소를 함께 즐길 수 있습니다.</li>
+            <li>청춘의 가장 빛나는 순간이 이곳에서 시작됩니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>💰 학업 지원</h2>
+          <ul>
+            <li>다양한 장학 제도로 학업을 지원합니다.</li>
+            <li>경제적 부담을 덜어 주기 위해 노력합니다.</li>
+            <li>성적 우수 학생에게 격려의 기회를 드립니다.</li>
+            <li>근로 장학으로 경험과 수입을 함께 얻습니다.</li>
+            <li>학업 상담으로 학습 어려움을 함께 해결합니다.</li>
+            <li>학생 복지 프로그램을 꾸준히 확대합니다.</li>
+            <li>누구나 공정하게 배울 기회를 가집니다.</li>
+            <li>건강 상담과 심리 지원을 제공합니다.</li>
+            <li>학생 중심의 행정 서비스를 지향합니다.</li>
+            <li>여러분의 도전을 든든하게 뒷받침합니다.</li>
+          </ul>
+        </div>
+        <div class="card" id="future">
+          <h2>🌱 지속가능한 미래</h2>
+          <ul>
+            <li>친환경 캠퍼스를 가꾸어 갑니다.</li>
+            <li>탄소중립과 에너지 절약을 실천합니다.</li>
+            <li>청정 제주를 지키는 환경 교육을 강화합니다.</li>
+            <li>재활용과 자원 순환 활동에 함께합니다.</li>
+            <li>지속가능한 발전을 가르치고 실천합니다.</li>
+            <li>후배들에게 물려줄 푸른 캠퍼스를 만듭니다.</li>
+            <li>환경을 생각하는 인재가 세상을 바꿉니다.</li>
+            <li>작은 실천이 큰 변화를 만든다고 믿습니다.</li>
+            <li>자연과 함께 살아가는 방법을 배웁니다.</li>
+            <li>미래 세대를 위한 약속을 지켜 갑니다.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h2>✨ 제주대학교와 함께</h2>
+          <ul>
+            <li>도전하는 사람에게 열려 있는 대학입니다.</li>
+            <li>당신의 가능성을 믿고 응원합니다.</li>
+            <li>새로운 시작을 환영합니다.</li>
+            <li>함께 배우고 함께 성장합니다.</li>
+            <li>제주의 자연 속에서 꿈을 키우세요.</li>
+            <li>열정이 있다면 누구든 환영합니다.</li>
+            <li>지금 바로 제주대학교의 문을 두드려 보세요.</li>
+            <li>여러분의 이야기가 이곳에서 시작됩니다.</li>
+            <li>제주대학교, 미래를 향한 첫걸음입니다.</li>
+            <li>환영합니다, 제주대학교에서 만나요! 🌺</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+
+    <aside>
+      <div class="card">
+        <h2>📌 바로가기</h2>
+        <ul>
+          <li><a href="#intro">🌊 캠퍼스 소개</a></li>
+          <li><a href="#edu">📚 교육</a></li>
+          <li><a href="#life">🎓 취업·학교 생활</a></li>
+          <li><a href="#future">🌱 미래</a></li>
+        </ul>
+        <a class="btn" href="agent.html">💬 채팅 상담 시작</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <p>🌺 제주대학교 홍보 페이지 · 입학 문의는 채팅 상담을 이용하세요.</p>
+    <p><a href="agent.html">💬 채팅 상담 시작하기</a></p>
+  </footer>
+<script>
+  // 화면 부품마다 이름표를 붙인다 (원본 index.html은 그대로)
+  const parts = [
+    ['header', '헤더'], ['nav', '탭(내비게이션)'], ['nav a', '탭 항목'],
+    ['input', '입력창'], ['.btn', '버튼'], ['.card', '카드'],
+    ['.card ul', '목록'], ['section', '섹션'], ['article', '아티클'],
+    ['aside', '사이드(aside)'], ['footer', '푸터']
+  ];
+  parts.forEach(([sel, name]) => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (sel === 'nav a') { el.classList.add('pm-box'); }
+      const host = (el.tagName === 'INPUT') ? el.parentElement : el;
+      if (el.tagName === 'INPUT') el.classList.add('pm-box');
+      el.classList.add('pm-box');
+      if (el.tagName === 'INPUT') return;
+      const t = document.createElement('span');
+      t.className = 'pm-tag'; t.textContent = name;
+      el.prepend(t);
+    });
+  });
+  document.querySelectorAll('input').forEach(el => {
+    const t = document.createElement('span');
+    t.className = 'pm-tag'; t.textContent = '입력창';
+    el.parentElement.style.position = 'relative';
+    el.before(t);
+  });
+  const note = document.createElement('div');
+  note.className = 'pm-note';
+  note.textContent = '🏷️ 부품 지도: 빨간 이름표가 각 화면 부품입니다. (원본: index.html)';
+  document.body.prepend(note);
+</script>
+</body>
+</html>
